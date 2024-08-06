@@ -5,7 +5,9 @@ const ageField = document.getElementById('age');
 const invia = document.getElementById('invia')
 const pricePerkm = 0.21;
 
-invia.addEventListener('click', function() {
+invia.addEventListener('click', function(e) {
+    // no ricaricamento
+    e.preventDefault();
 
     const kmTodoValue = parseInt(kmTodoField.value);
     const ageValue = ageField.value;
