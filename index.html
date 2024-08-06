@@ -8,9 +8,21 @@
 <body>
 
     <form>
-        <input id="km" type="number" value>
-        <input id="age" type="text">
-        <button></button>
+        <div>
+            <label for="km">Inserisci i km</label>
+            <input id="km" type="number" name="km">
+        </div>
+
+        <div>
+            <label for="age">Inserisci l'eta</label>
+            <select id="age" name="age">
+                <option value="underage">underage</option>
+                <option value="adult">adult</option>
+                <option value="over65">over65</option>
+            </select>
+        </div>
+
+        <button id="invia">INVIA</button>
     </form>
     <script src="script.js"></script>
 </body>
