@@ -13,5 +13,9 @@ invia.addEventListener('click', function(e) {
     const ageValue = ageField.value;
     console.log('kmTodoValue', kmTodoValue);
     console.log('ageValue', ageValue);
+
+    let basePrice = kmTodoValue * pricePerkm;
+    console.log('basePrice', basePrice);
 }
 )
+
