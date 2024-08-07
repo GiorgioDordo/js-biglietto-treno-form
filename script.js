@@ -11,11 +11,7 @@ calculateBtn.addEventListener('click', function(e) {
     // no ricaricamento
     e.preventDefault();
 
-    const nameText = document.getElementById('name');
-    const nameValue = nameUserField.value;
-    nameText.innerHTML = nameValue;
-    console.log('nameValue', nameValue);
-
+    // form data
     const typeTicket = document.getElementById('ticket-type');
     const fPriceMsg = document.getElementById('final-price');
     const dscMsg = document.getElementById('ticket-price'); 
@@ -25,6 +21,21 @@ calculateBtn.addEventListener('click', function(e) {
     console.log('kmTodoValue', kmTodoValue);
     console.log('ageValue', ageValue);
 
+    const nameText = document.getElementById('name');
+    const nameValue = nameUserField.value.trim();
+    nameText.innerHTML = nameValue;
+    console.log('nameValue', nameValue);
+
+    // Validation
+    const isNameValid = !nameValue;
+    const isAgeValid = ageValue !== 'over65' && ageValue !== 'underage' && ageValue !== 'adult' && ageValue !== '';
+    const isKmValid = isNaN(kmTodoValue) || kmTodoValue < 10 || kmTodoValue > 300;
+
+    if( isNameValid || isAgeValid || isKmValid) {
+        alert('error')
+    } else {
+
+    // price calc
     let basePrice = kmTodoValue * pricePerkm;
     console.log('basePrice', basePrice);
 
@@ -46,5 +57,13 @@ calculateBtn.addEventListener('click', function(e) {
         typeTicket.innerHTML = `40% discount`;
     }
 
+    // ticket data
+
+    const carriageN = document.getElementById('carriage');
+    carriageN.innerHTML = Math.floor(Math.random() * 26);
+
+    const codeTicket = document.getElementById('ticket-code');
+    codeTicket.innerHTML = Math.floor(Math.random() * 10001);
+}
 }
 )
