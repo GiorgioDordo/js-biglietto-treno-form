@@ -2,10 +2,10 @@ console.log('JS OK');
 
 const kmTodoField = document.getElementById('km');
 const ageField = document.getElementById('age');
-const inviaBtn = document.getElementById('invia')
+const calculateBtn = document.getElementById('calculate')
 const pricePerkm = 0.21;
 
-inviaBtn.addEventListener('click', function(e) {
+calculateBtn.addEventListener('click', function(e) {
     // no ricaricamento
     e.preventDefault();
 
@@ -15,8 +15,6 @@ inviaBtn.addEventListener('click', function(e) {
     const ageValue = ageField.value;
     console.log('kmTodoValue', kmTodoValue);
     console.log('ageValue', ageValue);
-    console.log('fPriceMsg', fPriceMsg);
-    console.log('dscMsg', dscMsg);
 
     let basePrice = kmTodoValue * pricePerkm;
     console.log('basePrice', basePrice);
